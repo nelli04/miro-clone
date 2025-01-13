@@ -14,7 +14,7 @@ const font = Poppins({
   weight: ["600"],
 });
 
-export const OrgSidebar = () => {
+export const OrganizationSidebar = () => {
   const searchParams = useSearchParams();
   const favorites = searchParams.get("favorites");
 
