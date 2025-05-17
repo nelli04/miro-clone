@@ -20,6 +20,7 @@ import { usePointer } from "../../_hooks/use-pointer";
 import { SelectionTools } from "../selection/selection-tools";
 import { CanvasLoading } from "./canvas-loading";
 import { CanvasSvg } from "./canvas-svg";
+import { useLayerTransformation } from "../../_hooks/use-layer-transformation";
 
 type CanvasProps = {
   boardId: string;
@@ -61,18 +62,7 @@ export const Canvas = ({ boardId }: CanvasProps) => {
     layerIds,
   });
 
-  const onResizeHandlerPointerDown = useCallback(
-    (corner: Side, initialBounds: XYWH) => {
-      history.pause();
-
-      setCanvasState({
-        mode: CanvasMode.Resizing,
-        initialBounds,
-        corner,
-      });
-    },
-    [history, setCanvasState]
-  );
+  const {onResizeHandlerPointerDown} = useLayerTransformation({canvasState, setCanvasState, history});
 
   const onWheel = useCallback((e: WheelEvent) => {
     setCamera((camera) => ({

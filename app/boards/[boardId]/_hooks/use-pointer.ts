@@ -3,7 +3,7 @@ import { useMutation } from "@/liveblocks.config";
 import { Camera, CanvasMode, CanvasState, Color, Point } from "@/types/canvas";
 import { History } from "@liveblocks/client";
 import { useCallback, PointerEvent } from "react";
-import { useInsertLayer } from "./insert-layer";
+import { useInsertLayer } from "./use-insert-layer";
 import { useSelection } from "./use-selection";
 import { useLayerTransformation } from "./use-layer-transformation";
 import { usePencilTool } from "./use-pencil-tool";
