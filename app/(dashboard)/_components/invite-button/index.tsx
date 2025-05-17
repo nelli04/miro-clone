@@ -2,6 +2,7 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
 import { OrganizationProfile } from "@clerk/nextjs";
+import { DialogTitle } from "@radix-ui/react-dialog";
 
 export const InviteButton = () => {
   return (
@@ -12,8 +13,9 @@ export const InviteButton = () => {
           Invite members
         </Button>
       </DialogTrigger>
-      <DialogContent className="p-0 bg-transparent border-none max-w-[880px]">
-        <OrganizationProfile />
+      <DialogContent className="max-w-screen-lg w-full max-h-[90vh] overflow-y-auto p-4">
+        <DialogTitle/>
+        <OrganizationProfile routing="hash" />
       </DialogContent>
     </Dialog>
   );
