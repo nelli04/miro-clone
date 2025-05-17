@@ -7,7 +7,7 @@ import {
   useSelf,
   useStorage,
 } from "@/liveblocks.config";
-import { CanvasMode, CanvasState, Side, XYWH } from "@/types/canvas";
+import { CanvasMode, CanvasState } from "@/types/canvas";
 import { useCallback, useState, WheelEvent } from "react";
 import { Info } from "../info";
 import { Participants } from "../participansts";

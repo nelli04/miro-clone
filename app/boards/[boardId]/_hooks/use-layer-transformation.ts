@@ -1,8 +1,8 @@
-import { useCallback } from "react";
 import { resizeBounds } from "@/lib/resize-bounds";
 import { useMutation } from "@/liveblocks.config";
 import { CanvasMode, CanvasState, Point, Side, XYWH } from "@/types/canvas";
 import { History } from "@liveblocks/client";
+import { useCallback } from "react";
 
 type LayerTransformationType = {
   canvasState: CanvasState;
@@ -76,7 +76,7 @@ export const useLayerTransformation = ({
         corner,
       });
     },
-    [history]
+    [history, setCanvasState]
   );
 
   return {

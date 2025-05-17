@@ -17,7 +17,7 @@ export const useSelection = ({ setCanvasState, layerIds }: Selection) => {
         current,
       });
     }
-  }, []);
+  }, [setCanvasState]);
 
   const updateSelectionNet = useMutation(
     ({ storage, setMyPresence }, current: Point, origin: Point) => {
