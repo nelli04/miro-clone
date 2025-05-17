@@ -23,7 +23,7 @@ type InfoProps = {
 };
 
 const TabSeparator = () => {
-  return <div className="text-neutral-300 px-1.5"/>
+  return <div className="text-neutral-300 px-1.5" />;
 };
 
 export const Info = ({ boardId }: InfoProps) => {
@@ -40,8 +40,8 @@ export const Info = ({ boardId }: InfoProps) => {
   return (
     <div className="absolute top-2 left-2 bg-white rounded-md px-1.5 h-12 flex items-center shadow-md">
       <Hint label="Go to board" side="bottom" sideOffset={10}>
-        <Button className="px-2" variant="board">
-          <Link href="/">
+        <Link href="/">
+          <Button className="px-2" variant="board">
             <Image src="/logo.svg" alt="Board logo" height={40} width={40} />
             <span
               className={cn(
@@ -51,8 +51,8 @@ export const Info = ({ boardId }: InfoProps) => {
             >
               Board
             </span>
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </Hint>
       <TabSeparator />
       <Hint label="Edit title" side="bottom" sideOffset={10}>
@@ -65,15 +65,13 @@ export const Info = ({ boardId }: InfoProps) => {
         </Button>
       </Hint>
       <TabSeparator />
-      <Actions id={data._id} title={data.title} side="bottom" sideOffset={10}>
-        <div>
-          <Hint label="Main menu" side="bottom" sideOffset={10}>
-            <Button size="icon" variant="board">
-              <Menu />
-            </Button>
-          </Hint>
-        </div>
-      </Actions>
+      <Hint label="Main menu" side="bottom" sideOffset={10}>
+        <Actions id={data._id} title={data.title} side="bottom" sideOffset={10}>
+          <Button size="icon" variant="board">
+            <Menu />
+          </Button>
+        </Actions>
+      </Hint>
     </div>
   );
 };
